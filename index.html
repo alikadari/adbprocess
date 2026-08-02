@@ -133,20 +133,45 @@
 
 <body>
 
-<header>
-    <div class="logo">
-        <img src="https://raw.githubusercontent.com/alikadari/adbprocess/main/logo.png" alt="ADB Process Industriels & Viticoles">
+<header style="
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+">
+
+    <!-- LOGO PREMIUM SUPERPOSÉ -->
+    <div style="z-index: 4000; margin-bottom: -40px;">
+        <img src="https://raw.githubusercontent.com/alikadari/adbprocess/main/logo.png"
+             alt="ADB Process Industriels & Viticoles"
+             style="height:180px;">
     </div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="industrie.html">Industrie</a></li>
-            <li><a href="viticole.html">Viticole</a></li>
-            <li><a href="maintenance.html">Maintenance</a></li>
-            <li><a href="contact.html">Contact</a></li>
+
+    <!-- MENU PREMIUM -->
+    <nav style="
+        background: rgba(0,0,0,0.45);
+        backdrop-filter: blur(6px);
+        width: 100%;
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    ">
+        <ul style="display:flex; gap:3rem; list-style:none;">
+            <li><a href="index.html" style="color:white; font-weight:600; text-decoration:none;">Accueil</a></li>
+            <li><a href="industrie.html" style="color:white; font-weight:600; text-decoration:none;">Industrie</a></li>
+            <li><a href="viticole.html" style="color:white; font-weight:600; text-decoration:none;">Viticole</a></li>
+            <li><a href="maintenance.html" style="color:white; font-weight:600; text-decoration:none;">Maintenance</a></li>
+            <li><a href="contact.html" style="color:white; font-weight:600; text-decoration:none;">Contact</a></li>
         </ul>
     </nav>
+
 </header>
+
 
 <section id="accueil" class="hero">
     <div>
