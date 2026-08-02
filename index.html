@@ -4,21 +4,181 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADB Process Industriels & Viticoles | Optimisation & Performance</title>
+    <meta name="description" content="ADB Process Industriels & Viticoles accompagne les professionnels de l'industrie et du secteur viticole en maintenance, convoyeurs, automatisation et projets sur mesure.">
 
-    <!-- CSS GLOBAL -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f4f7f6;
+            --accent-color: #ffc107;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --font-main: 'Roboto', sans-serif;
+            --font-title: 'Poppins', sans-serif;
+        }
 
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); background: var(--white); color: var(--text-dark); }
+
+        /* HEADER */
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img { height: 120px; }
+
+        nav ul { display: flex; gap: 2rem; list-style: none; }
+        nav a { color: var(--text-dark); font-weight: 500; text-decoration: none; }
+        nav a:hover { color: var(--primary-color); }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0,0,0,0.7)),
+                        url('industriviti.png') no-repeat center/cover;
+            color: var(--white);
+            padding: 0 10%;
+            margin-top: 60px;
+        }
+
+        .hero h1 { font-size: 3.5rem; }
+        .hero p { font-size: 1.3rem; margin: 1rem auto 2rem; max-width: 800px; }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .btn-primary { background: var(--accent-color); color: #333; }
+        .btn-primary:hover { background: #e0a800; }
+
+        /* SECTIONS */
+        section { padding: 5rem 10%; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+
+        /* COMPÉTENCES MODERNISÉES */
+        .competences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .competence-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .competence-card:nth-child(2) { animation-delay: 0.2s; }
+        .competence-card:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .competence-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .competence-overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 1.5rem;
+            background: rgba(0,0,0,0.55);
+            color: white;
+        }
+
+        .competence-overlay h3 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .competence-btn {
+            margin-top: 1rem;
+            padding: 10px 25px;
+            background: #c8102e;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 50px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        /* ABOUT */
+        .about-container {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* CONTACT */
+        .contact {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .btn-contact { background: var(--white); color: var(--primary-color); }
+        .btn-contact:hover { background: var(--accent-color); color: #333; }
+
+        /* FOOTER */
+        footer {
+            background: #222;
+            color: #bbb;
+            text-align: center;
+            padding: 3rem 10% 1rem;
+        }
+
+        footer .logo img { height: 70px; margin-bottom: 1rem; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; }
+            .about-container { flex-direction: column-reverse; }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- HEADER UNIFORMISÉ (Option B) -->
 <header>
-    <img src="logo.png" alt="ADB Process">
+    <div class="logo">
+        <img src="logo.png" alt="ADB Process Industriels & Viticoles">
+    </div>
 
     <nav>
         <ul>
@@ -31,123 +191,125 @@
     </nav>
 </header>
 
-<!-- ESPACE POUR NE PAS CACHER LE CONTENU -->
-<div style="height:160px;"></div>
 
-<!-- HERO -->
-<section class="hero" style="background-image:url('industriviti.png');">
+<section id="accueil" class="hero">
     <div>
         <h1>Optimisation Industrielle & Viticole</h1>
-        <p>Experts en performance des chargements de pressoirs, convoyeur caisses de raisins / bouteilles / cartons / palettes, maintenance et projets sur mesure.</p>
-        <a href="contact.html" class="btn">Demander un Conseil</a>
+        <p>Experts en performance des processus, convoyeurs, maintenance, remueurs, chargement de pressoirs et projets sur mesure.</p>
+        <a href="contact.html" class="btn btn-primary">Demander un Conseil</a>
     </div>
 </section>
 
-<!-- COMPÉTENCES -->
+
+<!-- ⭐ SECTION COMPÉTENCES MODERNISÉE (option D + tes images) -->
 <section id="competences" style="background:#f4f7f6;">
     <h2 class="section-title">Nos Compétences</h2>
 
-    <div class="grid">
+    <div class="competences-grid">
 
         <a href="bureau-etudes.html" style="text-decoration:none; color:inherit;">
-            <div class="card">
-                <h3>Bureau d'Études</h3>
-                <p>Conception, modélisation 3D, optimisation de lignes complètes.</p>
+            <div class="competence-card">
+                <img src="/adbprocess/solution_be.png" alt="Bureau d'études">
+                <div class="competence-overlay">
+                    <h3>Bureau d'Études</h3>
+                    <div class="competence-btn">Découvrir</div>
+                </div>
             </div>
         </a>
 
         <a href="optimisation-process.html" style="text-decoration:none; color:inherit;">
-            <div class="card">
-                <h3>Optimisation de Process</h3>
-                <p>Analyse de performance, automatisation, amélioration continue.</p>
+            <div class="competence-card">
+                <img src="/adbprocess/solution_industriel.png" alt="Optimisation de process">
+                <div class="competence-overlay">
+                    <h3>Optimisation de Process</h3>
+                    <div class="competence-btn">Découvrir</div>
+                </div>
             </div>
         </a>
 
         <a href="projets-viticoles.html" style="text-decoration:none; color:inherit;">
-            <div class="card">
-                <h3>Études & Projets Viticoles</h3>
-                <p>Convoyeurs, pressoirs automatiques, solutions sur mesure.</p>
+            <div class="competence-card">
+                <img src="/adbprocess/solution_vitivini.png" alt="Études viticoles">
+                <div class="competence-overlay">
+                    <h3>Études & Projets Viticoles</h3>
+                    <div class="competence-btn">Découvrir</div>
+                </div>
             </div>
         </a>
 
     </div>
 </section>
 
-<!-- QUI SOMMES-NOUS -->
-<section id="propos">
-    <h2 class="section-title">Qui Sommes-Nous ?</h2>
 
-    <div class="grid">
-
-        <div class="card">
+<section id="propos" class="about">
+    <h2 class="section-title">Qui sommes-nous ?</h2>
+    <div class="about-container">
+        <div>
             <h3>Votre partenaire performance</h3>
-            <p>
-                ADB Process Industriels & Viticoles accompagne les professionnels du secteur viticole et industriel 
-                en maintenance, dépannage, SAV, pièces détachées et amélioration d'équipements.
-            </p>
+            <p>ADB Process Industriels & Viticoles accompagne les professionnels du secteur viticole et industriel en maintenance,
+                dépannage, SAV, pièces détachées et amélioration d'équipements.
+                Fort de plus de 15 ans d'expérience en conception et fabrication de machines, 
+                nous vous apportons des solutions rapides, fiables et adaptées à vos besoins.</p>
+            <p style="margin-top: 1rem;">Notre mission : rendre votre outil de production plus agile, plus économe et plus performant.</p>
         </div>
-
-        <div class="card">
-            <h3>Un Savoir-Faire Éprouvé</h3>
-            <p>
-                Plus de 15 ans d'expérience en conception et fabrication de machines, avec une expertise unique en Champagne.
-            </p>
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600" alt="Ingénieur analysant des données industrielles">
         </div>
-
-        <div class="card">
-            <h3>Expertise Chargement de Pressoirs</h3>
-            <p>
-                Conception, ajustement et optimisation du chargement automatique de pressoirs.  
-                Maîtrise CAO (SolidWorks, AutoCAD) & automatisme.
-            </p>
-        </div>
-
     </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact" style="background:#0056b3; color:white; text-align:center;">
-    <h2 class="section-title" style="color:white;">Prêt à optimiser ?</h2>
+
+<section id="contact" class="contact">
+    <h2 class="section-title">Prêt à optimiser ?</h2>
     <p>Contactez-nous pour discuter de vos besoins industriels et viticoles.</p>
-    <a href="contact.html" class="btn">Accéder à la page Contact</a>
+    <a href="contact.html" class="btn btn-contact">Accéder à la page Contact</a>
 </section>
 
-<!-- FOOTER UNIFORMISÉ (Option D) -->
-<footer>
-    <div class="footer-grid">
 
-        <div>
-            <img src="logot.png" alt="ADB Process Industriels & Viticoles">
+<footer>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:3rem;">
+
+        <div class="logo">
+            <img src="logo.png" alt="ADB Process Industriels & Viticoles">
             <p style="line-height:1.6;">
                 ADB Process Industriels & Viticoles<br>
-                Concepteur, maintenance et intégrateur de solutions industrielles et viticoles.<br>
-                Spécialiste convoyeurs, chargement de pressoirs automatiques et maintenance technique.
+                Concepteur, mainteneur et intégrateur de solutions industrielles et viticoles.<br>
+                Spécialiste convoyeurs, pressoirs automatiques, remueurs et maintenance technique.
             </p>
         </div>
 
         <div>
-            <h3 style="color:#fff;">Navigation</h3>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="industrie.html">Industrie</a></li>
-                <li><a href="viticole.html">Viticole</a></li>
-                <li><a href="maintenance.html">Maintenance</a></li>
-                <li><a href="contact.html">Contact</a></li>
+            <h3 style="color:#fff; margin-bottom:1rem;">Qui sommes-nous ?</h3>
+            <p style="line-height:1.6;">
+                Basé à Épernay, ADB Process accompagne les professionnels de l’industrie et du secteur viticole.
+                Expertise unique en Champagne dans le chargement automatique de pressoirs, la maintenance de remueurs,
+                les convoyeurs et les projets techniques sur mesure.
+            </p>
+        </div>
+
+        <div>
+            <h3 style="color:#fff; margin-bottom:1rem;">Navigation</h3>
+            <ul style="list-style:none; padding:0; line-height:1.8;">
+                <li><a href="index.html" style="color:#ccc;">Accueil</a></li>
+                <li><a href="industrie.html" style="color:#ccc;">Industrie</a></li>
+                <li><a href="viticole.html" style="color:#ccc;">Viticole</a></li>
+                <li><a href="maintenance.html" style="color:#ccc;">Maintenance</a></li>
+                <li><a href="contact.html" style="color:#ccc;">Contact</a></li>
             </ul>
         </div>
 
         <div>
-            <h3 style="color:#fff;">Liens utiles</h3>
-            <ul>
-                <li><a href="mentions-legales.html">Mentions légales</a></li>
-                <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
-                <li><a href="conditions-utilisation.html">Conditions d’utilisation</a></li>
+            <h3 style="color:#fff; margin-bottom:1rem;">Liens utiles</h3>
+            <ul style="list-style:none; padding:0; line-height:1.8;">
+                <li><a href="mentions-legales.html" style="color:#ccc;">Mentions légales</a></li>
+                <li><a href="politique-confidentialite.html" style="color:#ccc;">Politique de confidentialité</a></li>
+                <li><a href="conditions-utilisation.html" style="color:#ccc;">Conditions d’utilisation</a></li>
             </ul>
         </div>
 
     </div>
 
-    <div class="footer-bottom">
+    <div style="text-align:center; margin-top:3rem; padding-top:2rem; border-top:1px solid #333;">
         © 2026 ADB Process Industriels & Viticoles — Tous droits réservés.
     </div>
 </footer>
