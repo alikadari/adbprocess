@@ -5,72 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Politique de confidentialité | ADB Process</title>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --accent-color: #c8102e;
+            --text-dark: #333;
+            --white: #ffffff;
+            --font-main: 'Roboto', sans-serif;
+        }
+
+        body { margin: 0; font-family: var(--font-main); background: var(--white); color: var(--text-dark); }
+
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero {
+            height: 40vh;
+            background: url('industriviti.png') no-repeat center/cover;
+            margin-top: 60px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+
+        section { padding: 5rem 10%; }
+        h2 { color: var(--accent-color); margin-bottom: 2rem; }
+        h3 { margin-top: 2rem; margin-bottom: 1rem; }
+
+        p { line-height: 1.7; margin-bottom: 1rem; }
+
+        footer {
+            background: #222;
+            color: #bbb;
+            text-align: center;
+            padding: 3rem 10% 1rem;
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-    <img src="logo.png" alt="ADB Process">
+    <div class="logo"><img src="logo.png" alt="ADB Process" style="height:120px;"></div>
     <nav>
-        <ul>
+        <ul style="display:flex; gap:2rem; list-style:none;">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="politique-confidentialite.html">Confidentialité</a></li>
         </ul>
     </nav>
 </header>
 
-<div style="height:160px;"></div>
-
-<section>
-    <h2 class="section-title">Politique de confidentialité</h2>
-
-    <div class="card">
-        <h3>Introduction</h3>
-        <p>Nous respectons le RGPD et garantissons la confidentialité de vos données.</p>
-
-        <h3>Données collectées</h3>
-        <p>Nom, email, téléphone, entreprise, message via le formulaire de contact.</p>
-
-        <h3>Utilisation</h3>
-        <p>Réponse aux demandes, devis, suivi commercial ou technique.</p>
-
-        <h3>Stockage</h3>
-        <p>Aucune donnée n’est stockée sur le site. Les messages sont envoyés par email.</p>
-
-        <h3>Partage</h3>
-        <p>Aucune donnée n’est partagée avec des tiers.</p>
-
-        <h3>Droits</h3>
-        <p>Droit d’accès, rectification, suppression.</p>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Politique de confidentialité</h1>
     </div>
 </section>
 
+<section>
+    <h2>Protection des données personnelles (RGPD)</h2>
+
+    <h3>Données collectées</h3>
+    <p>
+        ADB Process collecte uniquement les données transmises via le formulaire de contact :
+        nom, email, téléphone, entreprise, sujet et message.
+        Aucune autre donnée n’est collectée automatiquement.
+    </p>
+
+    <h3>Finalités de la collecte</h3>
+    <p>
+        Vos données sont utilisées pour :
+        <br>• répondre à vos demandes,
+        <br>• établir des devis,
+        <br>• assurer le suivi commercial ou technique,
+        <br>• planifier des interventions.
+    </p>
+
+    <h3>Base légale</h3>
+    <p>
+        Le traitement repose sur l’intérêt légitime de ADB Process à répondre aux demandes
+        et sur votre consentement lorsque vous envoyez un message.
+    </p>
+
+    <h3>Durée de conservation</h3>
+    <p>
+        Les messages envoyés via le formulaire sont conservés le temps nécessaire au traitement
+        puis archivés pour une durée maximale de 24 mois.
+    </p>
+
+    <h3>Partage des données</h3>
+    <p>
+        Aucune donnée n’est vendue, cédée ou partagée avec des tiers.
+        Les données sont uniquement traitées par ADB Process.
+    </p>
+
+    <h3>Hébergement</h3>
+    <p>
+        Le site est hébergé sur GitHub Pages.  
+        Les messages envoyés via le formulaire sont transmis par email et ne sont pas stockés sur le site.
+    </p>
+
+    <h3>Vos droits</h3>
+    <p>
+        Conformément au RGPD, vous disposez des droits suivants :
+        <br>• droit d’accès,
+        <br>• droit de rectification,
+        <br>• droit de suppression,
+        <br>• droit d’opposition,
+        <br>• droit à la portabilité.
+    </p>
+
+    <p>
+        Pour exercer vos droits :  
+        <strong>contact@adbprocess.fr</strong>
+    </p>
+
+    <h3>Sécurité</h3>
+    <p>
+        ADB Process met en œuvre des mesures techniques pour protéger les données transmises
+        (accès restreint, sécurisation des boîtes mail, contrôle interne).
+    </p>
+</section>
+
 <footer>
-    <div class="footer-grid">
-        <div>
-            <img src="logot.png" alt="ADB Process">
-            <p>ADB Process Industriels & Viticoles<br>Solutions industrielles et viticoles sur mesure.</p>
-        </div>
-
-        <div>
-            <h3 style="color:#fff;">Navigation</h3>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="politique-confidentialite.html">Confidentialité</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h3 style="color:#fff;">Liens utiles</h3>
-            <ul>
-                <li><a href="mentions-legales.html">Mentions légales</a></li>
-                <li><a href="conditions-utilisation.html">Conditions</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-bottom">© 2026 ADB Process — Tous droits réservés.</div>
+    <div>© 2026 ADB Process Industriels & Viticoles — Tous droits réservés.</div>
 </footer>
 
 </body>
