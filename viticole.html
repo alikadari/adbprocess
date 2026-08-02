@@ -3,135 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viticole | ADB Process Industriels & Viticoles</title>
-    <meta name="description" content="Convoyeurs de caisses de raisin, bouteilles, cartons, chargement automatique de pressoirs, maintenance et études techniques pour le secteur viticole en Champagne.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --primary-color: #8b0000;
-            --secondary-color: #f4f7f6;
-            --accent-color: #ffc107;
-            --text-dark: #333;
-            --text-light: #666;
-            --white: #ffffff;
-            --font-main: 'Roboto', sans-serif;
-            --font-title: 'Poppins', sans-serif;
-        }
-
-        body { margin: 0; font-family: var(--font-main); background: var(--white); color: var(--text-dark); }
-
-        header {
-            background: var(--white);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo img { height: 70px; }
-
-        nav ul { display: flex; gap: 2rem; list-style: none; }
-        nav a { color: var(--text-dark); font-weight: 500; text-decoration: none; }
-        nav a:hover { color: var(--primary-color); }
-
-        .hero {
-            background: linear-gradient(rgba(139, 0, 0, 0.8), rgba(0,0,0,0.7)),
-                        url('https://raw.githubusercontent.com/alikadari/adbprocess/main/industriviti.png') no-repeat center/cover;
-            color: var(--white);
-            padding: 6rem 10%;
-            text-align: center;
-        }
-
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; max-width: 800px; margin: auto; }
-
-        section { padding: 4rem 10%; }
-        .section-title { font-size: 2.3rem; text-align: center; margin-bottom: 3rem; }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--secondary-color);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        .card p { color: var(--text-light); }
-
-        footer {
-            background: #222;
-            color: #bbb;
-            text-align: center;
-            padding: 3rem 10% 1rem;
-        }
-
-        footer img { height: 70px; margin-bottom: 1rem; }
-    </style>
+    <title>Viticole | ADB Process</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- HEADER FIXE PREMIUM -->
-<header style="
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 3000;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-">
-
-    <div style="
-        max-width: 1400px;
-        margin: auto;
-        padding: 20px 40px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    ">
-
-        <!-- LOGO -->
-        <img src="logot.png" alt="ADB Process" style="height:140px;">
-
-        <!-- MENU -->
-        <nav>
-            <ul style="
-                list-style:none;
-                margin:0;
-                padding:0;
-                display:flex;
-                gap:3rem;
-            ">
-                <li><a href="index.html" style="color:#000; font-size:1.3rem; font-weight:600; text-decoration:none;">Accueil</a></li>
-                <li><a href="industrie.html" style="color:#000; font-size:1.3rem; font-weight:600; text-decoration:none;">Industrie</a></li>
-                <li><a href="viticole.html" style="color:#000; font-size:1.3rem; font-weight:600; text-decoration:none;">Viticole</a></li>
-                <li><a href="maintenance.html" style="color:#000; font-size:1.3rem; font-weight:600; text-decoration:none;">Maintenance</a></li>
-                <li><a href="contact.html" style="color:#000; font-size:1.3rem; font-weight:600; text-decoration:none;">Contact</a></li>
-            </ul>
-        </nav>
-
-    </div>
-
+<header>
+    <img src="logo.png" alt="ADB Process">
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="industrie.html">Industrie</a></li>
+            <li><a href="viticole.html">Viticole</a></li>
+            <li><a href="maintenance.html">Maintenance</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
-<!-- ESPACE POUR NE PAS CACHER LE CONTENU -->
-<div style="height:200px;"></div>
-
-<section class="hero">
-    <h1>Solutions Viticoles</h1>
-    <p>Convoyeurs, chargement automatique de pressoirs, maintenance et projets sur mesure pour les installations viticoles en Champagne.</p>
+<section class="hero" style="background-image:url('industriviti.png');">
+    <div>
+        <h1>Solutions Viticoles</h1>
+        <p>Convoyeurs, chargement automatique de pressoirs, maintenance et projets sur mesure pour les installations viticoles en Champagne.</p>
+    </div>
 </section>
 
 <section>
@@ -141,125 +36,46 @@
 
         <div class="card">
             <h3>Convoyeurs de caisses de raisin</h3>
-            <p>
-                Conception, installation et maintenance de convoyeurs pour le transport des caisses de raisin.
-                Solutions robustes, adaptées aux cadences de vendanges et aux contraintes du terrain champenois.
-            </p>
+            <p>Conception, installation et maintenance de convoyeurs robustes adaptés aux cadences de vendanges.</p>
         </div>
 
         <div class="card">
             <h3>Convoyeurs de bouteilles</h3>
-            <p>
-                Convoyeurs pour lignes d’embouteillage, dégorgement, tirage et habillage.
-                Optimisation des flux pour réduire les temps d’arrêt et améliorer la productivité.
-            </p>
+            <p>Convoyeurs pour lignes d’embouteillage, dégorgement, tirage et habillage.</p>
         </div>
 
         <div class="card">
             <h3>Convoyeurs de cartons</h3>
-            <p>
-                Solutions pour le transport automatisé des cartons, palettes et emballages.
-                Intégration possible avec vos systèmes de conditionnement et de stockage.
-            </p>
+            <p>Transport automatisé des cartons, palettes et emballages avec intégration possible en ligne.</p>
         </div>
 
         <div class="card">
             <h3>Chargement automatique de pressoirs</h3>
-            <p>
-                Développement de systèmes de chargement automatique de pressoirs.
-                <strong>Une expertise unique en Champagne</strong> : ADB Process est la seule entreprise de la région
-                à maîtriser ce savoir-faire technique.
-            </p>
+            <p>Expertise unique en Champagne : conception, optimisation et automatisation du chargement de pressoirs.</p>
         </div>
 
         <div class="card">
-            <h3>Maintenance des installations viticoles</h3>
-            <p>
-                Maintenance préventive et corrective des pressoirs, cuves, pompes, systèmes de transfert et lignes d’embouteillage.
-            </p>
+            <h3>Maintenance viticole</h3>
+            <p>Maintenance préventive et corrective des pressoirs, cuves, pompes et lignes d’embouteillage.</p>
         </div>
 
         <div class="card">
             <h3>Mise à disposition de personnel</h3>
-            <p>
-                Renfort de personnel qualifié pendant les vendanges, les mises en bouteille ou les périodes de forte activité.
-            </p>
+            <p>Renfort de personnel qualifié pendant les vendanges ou périodes de forte activité.</p>
         </div>
 
         <div class="card">
-            <h3>Études techniques & Fabrication sur mesure</h3>
-            <p>
-                Étude complète de vos besoins, conception d’équipements spécifiques et fabrication sur mesure
-                adaptée à vos contraintes viticoles.
-            </p>
+            <h3>Études techniques & Fabrication</h3>
+            <p>Étude complète, conception d’équipements spécifiques et fabrication sur mesure.</p>
         </div>
 
     </div>
 </section>
 
-<footer style="background:#1a1a1a; color:#ccc; padding:4rem 10%; animation:footerFadeUp 1.2s ease forwards;">
-
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:3rem;">
-
-        <!-- LOGO + DESCRIPTION -->
-        <div>
-            <img src="logot.png" alt="ADB Process Industriels & Viticoles" style="height:160px; margin-bottom:1rem;">
-
-            <h3 style="color:#fff; margin-bottom:1rem;">ADB Process Industriels & Viticoles en Bref</h3>
-
-            <p style="line-height:1.6;">
-                ADB Process met plus de 15 ans d'expertise au service des professionnels viticoles et industriels 
-                pour optimiser, maintenir et pérenniser leurs outils de production.
-            </p>
-
-            <h4 style="color:#fff; margin-top:1.5rem;">Points Clés :</h4>
-
-            <ul style="line-height:1.7; margin-left:1rem;">
-                <li><strong>Services Globaux :</strong> Maintenance, dépannage réactif, SAV, pièces détachées et amélioration d'équipements.</li>
-                <li><strong>Valeurs & Engagement :</strong> Continuateur d'un savoir-faire historique basé sur la rigueur, l'écoute et une grande réactivité pour assurer la sérénité des clients.</li>
-                <li><strong>Spécialité Exclusive :</strong> Expertise unique dans la conception, l'optimisation et la modélisation (CAO / Automatisme) du chargement de pressoirs et des lignes de convoyage sur mesure.</li>
-            </ul>
-        </div>
-
-        <!-- QUI SOMMES-NOUS -->
-        <div>
-            <h3 style="color:#fff; margin-bottom:1rem;">Qui sommes-nous ?</h3>
-            <p style="line-height:1.6;">
-                Basé à Épernay, ADB Process accompagne les professionnels de l’industrie et du secteur viticole.
-                Expertise unique en Champagne dans le chargement automatique de pressoirs, la maintenance de remueurs,
-                les convoyeurs et les projets techniques sur mesure.
-            </p>
-        </div>
-
-        <!-- NAVIGATION -->
-        <div>
-            <h3 style="color:#fff; margin-bottom:1rem;">Navigation</h3>
-            <ul style="list-style:none; padding:0; line-height:1.8;">
-                <li><a href="index.html" style="color:#ccc;">Accueil</a></li>
-                <li><a href="industrie.html" style="color:#ccc;">Industrie</a></li>
-                <li><a href="viticole.html" style="color:#ccc;">Viticole</a></li>
-                <li><a href="maintenance.html" style="color:#ccc;">Maintenance</a></li>
-                <li><a href="contact.html" style="color:#ccc;">Contact</a></li>
-            </ul>
-        </div>
-
-        <!-- LIENS UTILES -->
-        <div>
-            <h3 style="color:#fff; margin-bottom:1rem;">Liens utiles</h3>
-            <ul style="list-style:none; padding:0; line-height:1.8;">
-                <li><a href="mentions-legales.html" style="color:#ccc;">Mentions légales</a></li>
-                <li><a href="politique-confidentialite.html" style="color:#ccc;">Politique de confidentialité</a></li>
-                <li><a href="conditions-utilisation.html" style="color:#ccc;">Conditions d’utilisation</a></li>
-            </ul>
-        </div>
-
-    </div>
-
-    <div style="text-align:center; margin-top:3rem; padding-top:2rem; border-top:1px solid #333;">
-        © 2026 ADB Process Industriels & Viticoles — Tous droits réservés.
-    </div>
-
+<footer>
+    <img src="logot.png" alt="ADB Process">
+    <p>© 2026 ADB Process Industriels & Viticoles — Tous droits réservés.</p>
 </footer>
-        
+
 </body>
 </html>
