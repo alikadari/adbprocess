@@ -1,260 +1,245 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ADB Process Industriels & Viticoles</title>
-
-    <meta name="description"
-        content="ADB Process conçoit des convoyeurs sur mesure, réalise la maintenance de chargements de pressoirs et remueurs et accompagne les professionnels de la viticulture.">
-
-    <meta name="keywords"
-        content="convoyeur, convoyeurs, pressoir, maintenance, remueur, champagne, viticulture, automation, ADB Process">
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
+    <title>ADB Process | Optimisation & Performance Industrielle</title>
+    <meta name="description" content="ADB Process - Experts en optimisation de processus industriels et performance globale.">
+    
+    <!-- Intégration de polices modernes (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <style>
+        /* --- VARIABLES DE DESIGN --- */
+        :root {
+            --primary-color: #0056b3; /* Bleu Industriel */
+            --secondary-color: #f4f7f6; /* Gris très clair */
+            --accent-color: #ffc107; /* Jaune/Orange pour les boutons (action) */
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --font-main: 'Roboto', sans-serif;
+            --font-title: 'Poppins', sans-serif;
+        }
 
+        /* --- STYLES DE BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        h1, h2, h3 { font-family: var(--font-title); font-weight: 700; color: var(--primary-color); }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- EN-TÊTE (Navigation) --- */
+        header {
+            background-color: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary-color); }
+        .logo span { color: var(--text-dark); }
+        
+        nav ul { display: flex; gap: 2rem; }
+        nav a { color: var(--text-dark); font-weight: 400; }
+        nav a:hover { color: var(--primary-color); }
+
+        /* --- SECTION HÉRO (Accueil) --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* Image de fond industrielle générique (libre de droits via Unsplash) */
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070') no-repeat center center/cover;
+            color: var(--white);
+            padding: 0 10%;
+            margin-top: 60px; /* Espace pour le header fixe */
+        }
+        .hero-content h1 { font-size: 3.5rem; color: var(--white); margin-bottom: 1rem; }
+        .hero-content p { font-size: 1.3rem; font-weight: 300; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;}
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .btn-primary { background-color: var(--accent-color); color: #333; }
+        .btn-primary:hover { background-color: #e0a800; transform: translateY(-3px); }
+
+        /* --- SECTIONS GÉNÉRIQUES --- */
+        section { padding: 5rem 10%; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- SECTION SERVICES (Grille visuelle) --- */
+        .services { background-color: var(--secondary-color); }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .service-item {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+        .service-item:hover { transform: translateY(-10px); border-color: var(--primary-color); }
+        
+        /* Icônes simples via texte (SVG ou FontAwesome seraient mieux, mais c'est pour la simplicité) */
+        .service-icon { font-size: 3rem; margin-bottom: 1.5rem; display: block; }
+        
+        .service-item h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-dark); }
+        .service-item p { color: var(--text-light); font-size: 0.95rem; }
+
+        /* --- SECTION À PROPOS --- */
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+        .about-text { flex: 1; }
+        .about-image { flex: 1; text-align: center; }
+        .about-image img { 
+            max-width: 100%; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+            /* Remplacer par une vraie image de l'équipe ou de l'usine */
+            background-color: #ddd; height: 300px; width: 100%; object-fit: cover;
+        }
+
+        /* --- SECTION CONTACT (Simple) --- */
+        .contact { text-align: center; background-color: var(--primary-color); color: var(--white); }
+        .contact .section-title { color: var(--white); }
+        .contact p { margin-bottom: 2rem; font-size: 1.1rem; }
+        .btn-contact { background-color: var(--white); color: var(--primary-color); }
+        .btn-contact:hover { background-color: var(--accent-color); color: #333; }
+
+        /* --- PIED DE PAGE --- */
+        footer {
+            background-color: #222;
+            color: #bbb;
+            padding: 3rem 10% 1rem 10%;
+            text-align: center;
+        }
+        .footer-content { margin-bottom: 2rem; font-size: 0.9rem; }
+        .copyright { font-size: 0.8rem; border-top: 1px solid #444; padding-top: 1rem; }
+
+        /* --- RESPONSIVE (Mobiles) --- */
+        @media (max-width: 768px) {
+            header { padding: 1rem; flex-direction: column; gap: 1rem; }
+            nav ul { gap: 1rem; font-size: 0.9rem; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-content p { font-size: 1rem; }
+            .section-title { font-size: 2rem; }
+            .about-container { flex-direction: column-reverse; gap: 2rem; }
+            section { padding: 3rem 5%; }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-
-    <div class="container">
-
-        <a href="index.html" class="logo">
-
-            <img src="images/logo.png" alt="ADB Process">
-
-        </a>
-
+    <!-- 1. EN-TÊTE ET NAVIGATION -->
+    <header>
+        <div class="logo">ADB<span>Process</span></div>
         <nav>
-
             <ul>
-
-                <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="entreprise.html">Entreprise</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="realisations.html">Réalisations</a></li>
-                <li><a href="contact.html">Contact</a></li>
-
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#propos">À Propos</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-
         </nav>
-
-    </div>
-
-</header>
-
-<section class="hero">
-
-    <div class="overlay"></div>
-
-    <div class="hero-content">
-
-        <h1>
-
-            Process industriels <span>&</span> viticoles
-
-        </h1>
-
-        <p>
-
-            Fabrication de convoyeurs sur mesure<br>
-            Maintenance de chargements de pressoirs<br>
-            Maintenance de remueurs automatiques
-
-        </p>
-
-        <a href="contact.html" class="btn">
-
-            Demander un devis
-
-        </a>
-
-    </div>
-
-</section>
-
-<section class="presentation">
-
-    <div class="container">
-
-        <h2>
-
-            Votre partenaire industriel
-
-        </h2>
-
-        <p>
-
-            ADB Process accompagne les professionnels de la viticulture
-            dans la conception de convoyeurs,
-            l'amélioration des installations existantes,
-            ainsi que la maintenance préventive et curative
-            des systèmes de chargement de pressoirs et des remueurs.
-
-        </p>
-
-    </div>
-
-</section>
-
-<section class="services-home">
-
-<div class="container">
-
-<h2>Nos expertises</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>Convoyeurs</h3>
-
-<p>
-
-Fabrication de convoyeurs adaptés à vos besoins.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Chargement de pressoirs</h3>
-
-<p>
-
-Étude, réalisation et maintenance.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Maintenance</h3>
-
-<p>
-
-Intervention rapide sur vos équipements.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Remueurs</h3>
-
-<p>
-
-Maintenance et remise en état.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="expertise">
-
-<div class="container">
-
-<div class="texte">
-
-<h2>
-
-Une expertise au service des professionnels
-
-</h2>
-
-<p>
-
-Notre objectif est de garantir
-la disponibilité de vos équipements,
-d'optimiser vos lignes de production
-et de proposer des solutions fiables,
-robustes et durables.
-
-</p>
-
-<ul>
-
-<li>✔ Maintenance préventive</li>
-
-<li>✔ Dépannage</li>
-
-<li>✔ Modernisation</li>
-
-<li>✔ Études techniques</li>
-
-<li>✔ Fabrication sur mesure</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="cta">
-
-<div class="container">
-
-<h2>
-
-Besoin d'une intervention ?
-
-</h2>
-
-<p>
-
-Contactez ADB Process pour une étude ou un devis personnalisé.
-
-</p>
-
-<a href="contact.html" class="btn">
-
-Nous contacter
-
-</a>
-
-</div>
-
-</section>
-
-<footer>
-
-<div class="container">
-
-<p>
-
-© 2026 ADB Process - Process Industriels & Viticoles
-
-</p>
-
-</div>
-
-</footer>
-
-<script src="js/script.js"></script>
+    </header>
+
+    <!-- 2. SECTION HÉRO (Première impression) -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Optimisation Industrielle</h1>
+            <p>Experts en analyse de données et performance des processus. Nous transformons vos données en décisions stratégiques pour une industrie plus efficace.</p>
+            <a href="#contact" class="btn btn-primary">Demander un Audit</a>
+        </div>
+    </section>
+
+    <!-- 3. SECTION SERVICES (Visualisés sous forme de cartes) -->
+    <section id="services" class="services">
+        <h2 class="section-title">Nos Compétences</h2>
+        <div class="services-grid">
+            
+            <div class="service-item">
+                <span class="service-icon">📊</span> <!-- Icône simple -->
+                <h3>Analyse de Données</h3>
+                <p>Exploration approfondie de vos données de production pour identifier les goulots d'étranglement et les opportunités d'amélioration.</p>
+            </div>
+
+            <div class="service-item">
+                <span class="service-icon">⚙️</span>
+                <h3>Optimisation de Process</h3>
+                <p>Modélisation et simulation de vos lignes de production pour maximiser le rendement et réduire les pertes.</p>
+            </div>
+
+            <div class="service-item">
+                <span class="service-icon">🚀</span>
+                <h3>Performance Globale</h3>
+                <p>Accompagnement stratégique vers l'industrie 4.0 et mise en place d'indicateurs de performance (KPI) pertinents.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. SECTION À PROPOS (Texte + Image) -->
+    <section id="propos" class="about">
+        <h2 class="section-title">Qui sommes-nous ?</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <h3>Votre partenaire performance</h3>
+                <p>ADB Process est un cabinet de conseil spécialisé dans l'accompagnement des entreprises industrielles. Nous combinons une expertise technique pointue en ingénierie des processus avec les outils modernes de la Data Science.</p>
+                <p style="margin-top: 1rem;">Notre mission est simple : rendre votre outil de production plus agile, plus économe et plus performant.</p>
+            </div>
+            <div class="about-image">
+                <!-- Image d'illustration (Unsplash libre de droits) -->
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600" alt="Ingénieur analysant des données industrielles">
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SECTION CONTACT -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Prêt à optimiser ?</h2>
+        <p>Contactez-nous pour discuter de vos défis industriels et obtenir une première analyse personnalisée.</p>
+        <a href="mailto:contact@adbprocess.fr" class="btn btn-contact">Envoyer un E-mail</a>
+    </section>
+
+    <!-- 6. PIED DE PAGE -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="color: var(--white); margin-bottom: 1rem;">ADB<span>Process</span></div>
+            <p>123 Rue de l'Industrie, 75000 Paris</p>
+            <p>Email: contact@adbprocess.fr | Tél: +33 1 23 45 67 89</p>
+        </div>
+        <div class="copyright">
+            &copy; 2024 ADB Process. Tous droits réservés.
+        </div>
+    </footer>
 
 </body>
-
 </html>
