@@ -1,0 +1,156 @@
+/* ===========================
+   ADB PROCESS — STYLE GLOBAL
+   =========================== */
+
+:root {
+    --inox-light: #d5d5d5;
+    --inox-dark: #8f8f8f;
+    --anthracite: #1a1a1a;
+    --wine-red: #8b0e1a;
+    --white: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--anthracite);
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--white);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+    z-index: 2000;
+}
+
+header img {
+    height: 120px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--anthracite);
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--wine-red);
+}
+
+/* HERO */
+.hero {
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 10%;
+    margin-top: 160px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* SECTIONS */
+section {
+    padding: 5rem 10%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.6rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 3rem;
+    color: var(--wine-red);
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--inox-light);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--wine-red);
+}
+
+.card p {
+    line-height: 1.7;
+    color: #444;
+}
+
+/* FOOTER */
+footer {
+    background: var(--anthracite);
+    color: var(--white);
+    padding: 4rem 10%;
+    margin-top: 4rem;
+}
+
+footer img {
+    height: 120px;
+    margin-bottom: 1rem;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8;
+}
+
+footer a {
+    color: var(--inox-light);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--wine-red);
+}
