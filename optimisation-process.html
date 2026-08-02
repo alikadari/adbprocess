@@ -4,111 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Optimisation de Process | ADB Process</title>
-    <meta name="description" content="Optimisation des lignes de production, analyse de performance, réduction des pannes et amélioration continue.">
-
-    <style>
-        body { margin:0; font-family:Arial, sans-serif; background:#fff; color:#333; }
-        .hero {
-            height:50vh;
-            background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                       url('https://raw.githubusercontent.com/alikadari/adbprocess/main/industriviti.png') center/cover;
-            display:flex; justify-content:center; align-items:center; text-align:center; color:white;
-            padding:0 10%; margin-top:200px;
-        }
-        section { padding:4rem 10%; }
-        h1 { font-size:3rem; margin-bottom:1rem; }
-        h2 { font-size:2rem; margin-top:2rem; color:#0056b3; }
-        p { line-height:1.7; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- HEADER FIXE ALIGNÉ -->
-<header style="
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 3000;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-">
-
-    <div style="
-        max-width: 1400px;
-        margin: auto;
-        padding: 10px 40px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    ">
-
-        <!-- LOGO -->
-        <img src="logo.png" alt="ADB Process" style="height:120px;">
-
-        <!-- MENU -->
-        <nav>
-            <ul style="
-                list-style:none;
-                margin:0;
-                padding:0;
-                display:flex;
-                gap:2.5rem;
-            ">
-                <li><a href="index.html" style="color:#000; font-size:1.2rem; font-weight:600; text-decoration:none;">Accueil</a></li>
-                <li><a href="industrie.html" style="color:#000; font-size:1.2rem; font-weight:600; text-decoration:none;">Industrie</a></li>
-                <li><a href="viticole.html" style="color:#000; font-size:1.2rem; font-weight:600; text-decoration:none;">Viticole</a></li>
-                <li><a href="maintenance.html" style="color:#000; font-size:1.2rem; font-weight:600; text-decoration:none;">Maintenance</a></li>
-                <li><a href="contact.html" style="color:#000; font-size:1.2rem; font-weight:600; text-decoration:none;">Contact</a></li>
-            </ul>
-        </nav>
-
-    </div>
-
+<header>
+    <img src="logo.png" alt="ADB Process">
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="industrie.html">Industrie</a></li>
+            <li><a href="viticole.html">Viticole</a></li>
+            <li><a href="maintenance.html">Maintenance</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
-<!-- ESPACE POUR NE PAS CACHER LE CONTENU -->
-<div style="height:160px;"></div>
-
-    <section class="hero">
-    <h1>Optimisation de Process</h1>
+<section class="hero" style="background-image:url('industriviti.png');">
+    <div>
+        <h1>Optimisation de Process</h1>
+        <p>Analyse de performance, automatisation, réduction des pannes et amélioration continue.</p>
+    </div>
 </section>
 
 <section>
-    <h2>Analyse de Performance</h2>
-    <p>
-        Nous analysons vos lignes de production pour identifier les pertes de rendement, les goulots d’étranglement et les sources de pannes.
-    </p>
+    <h2 class="section-title">Analyse & Amélioration</h2>
 
-    <h2>Amélioration Continue</h2>
-    <p>
-        Mise en place de solutions techniques pour augmenter la cadence, réduire les arrêts et améliorer la qualité de production.
-    </p>
+    <div class="grid">
 
-    <h2>Automatisation & Modernisation</h2>
-    <p>
-        Intégration d’automates, capteurs, systèmes de contrôle et optimisation des cycles industriels et viticoles.
-    </p>
+        <div class="card">
+            <h3>Analyse de performance</h3>
+            <p>Identification des pertes de rendement, goulots d’étranglement et sources de pannes.</p>
+        </div>
+
+        <div class="card">
+            <h3>Amélioration continue</h3>
+            <p>Solutions techniques pour augmenter la cadence, réduire les arrêts et améliorer la qualité.</p>
+        </div>
+
+        <div class="card">
+            <h3>Automatisation & modernisation</h3>
+            <p>Intégration d’automates, capteurs, systèmes de contrôle et optimisation des cycles.</p>
+        </div>
+
+    </div>
 </section>
 
-<!-- FOOTER PREMIUM -->
-<footer style="background:#1a1a1a; color:#ccc; padding:4rem 10%;">
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:3rem;">
-        <div>
-            <img src="https://raw.githubusercontent.com/alikadari/adbprocess/main/logo.png" style="height:80px;">
-            <p>ADB Process Industriels & Viticoles<br>Optimisation des installations industrielles et viticoles.</p>
-        </div>
-        <div>
-            <h3 style="color:white;">Navigation</h3>
-            <ul style="list-style:none; padding:0;">
-                <li><a href="index.html" style="color:#ccc;">Accueil</a></li>
-                <li><a href="bureau-etudes.html" style="color:#ccc;">Bureau d'Études</a></li>
-                <li><a href="optimisation-process.html" style="color:#ccc;">Optimisation de Process</a></li>
-                <li><a href="projets-viticoles.html" style="color:#ccc;">Projets Viticoles</a></li>
-            </ul>
-        </div>
-    </div>
+<footer>
+    <img src="logot.png" alt="ADB Process">
+    <p>© 2026 ADB Process Industriels & Viticoles — Tous droits réservés.</p>
 </footer>
 
 </body>
