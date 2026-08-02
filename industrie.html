@@ -5,20 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Industrie | ADB Process Industriels & Viticoles</title>
 
-    <!-- CSS GLOBAL -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --accent-color: #c8102e;
+            --text-dark: #333;
+            --white: #ffffff;
+            --font-main: 'Roboto', sans-serif;
+        }
 
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); background: var(--white); color: var(--text-dark); }
+
+        /* HEADER */
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img { height: 120px; }
+
+        nav ul { display: flex; gap: 2rem; list-style: none; }
+        nav a { color: var(--text-dark); font-weight: 500; text-decoration: none; }
+        nav a:hover { color: var(--primary-color); }
+
+        /* HERO */
+        .hero {
+            height: 60vh;
+            background: url('industriviti.png') no-repeat center/cover;
+            margin-top: 60px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 10%;
+            color: white;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; }
+
+        /* SECTION */
+        section { padding: 5rem 10%; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #f4f7f6;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card h3 { font-size: 1.6rem; margin-bottom: 1rem; color: var(--accent-color); }
+        .card p { line-height: 1.6; }
+
+        /* FOOTER */
+        footer {
+            background: #222;
+            color: #bbb;
+            text-align: center;
+            padding: 3rem 10% 1rem;
+        }
+
+        footer .logo img { height: 70px; margin-bottom: 1rem; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- HEADER UNIFORMISÉ -->
 <header>
-    <img src="logo.png" alt="ADB Process">
+    <div class="logo">
+        <img src="logo.png" alt="ADB Process">
+    </div>
 
     <nav>
         <ul>
@@ -31,18 +129,15 @@
     </nav>
 </header>
 
-<!-- ESPACE POUR NE PAS CACHER LE CONTENU -->
-<div style="height:160px;"></div>
-
 <!-- HERO -->
-<section class="hero" style="background-image:url('industriviti.png');">
-    <div>
+<section class="hero">
+    <div class="hero-content">
         <h1>Solutions Industrielles</h1>
-        <p>Maintenance, personnel qualifié, optimisation de process et études techniques pour vos installations industrielles.</p>
+        <p>Maintenance, optimisation, personnel qualifié et études techniques pour vos installations industrielles.</p>
     </div>
 </section>
 
-<!-- SECTION INDUSTRIE -->
+<!-- CONTENU INDUSTRIE -->
 <section>
     <h2 class="section-title">Nos Interventions dans l’Industrie</h2>
 
@@ -50,71 +145,62 @@
 
         <div class="card">
             <h3>Mise à disposition de personnel</h3>
-            <p>
-                Personnel qualifié pour renforcer vos équipes et assurer la continuité de vos opérations industrielles.
-            </p>
+            <p>Personnel qualifié pour renforcer vos équipes et assurer la continuité de vos opérations industrielles.</p>
         </div>
 
         <div class="card">
             <h3>Maintenance préventive</h3>
-            <p>
-                Plans de maintenance pour éviter les pannes, réduire les arrêts et prolonger la durée de vie de vos équipements.
-            </p>
+            <p>Plans de maintenance pour éviter les pannes, réduire les arrêts et prolonger la durée de vie de vos équipements.</p>
         </div>
 
         <div class="card">
             <h3>Maintenance corrective</h3>
-            <p>
-                Intervention rapide pour résoudre les pannes et limiter les arrêts de production.
-            </p>
+            <p>Intervention rapide pour résoudre les pannes et limiter les arrêts de production.</p>
         </div>
 
         <div class="card">
             <h3>Études techniques & Fabrication</h3>
-            <p>
-                Conception de solutions sur mesure adaptées à vos contraintes industrielles.
-            </p>
+            <p>Conception de solutions sur mesure adaptées à vos contraintes industrielles.</p>
         </div>
 
     </div>
 </section>
 
-<!-- FOOTER UNIFORMISÉ -->
+<!-- FOOTER -->
 <footer>
-    <div class="footer-grid">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:3rem;">
 
-        <div>
-            <img src="logot.png" alt="ADB Process Industriels & Viticoles">
+        <div class="logo">
+            <img src="logo.png" alt="ADB Process">
             <p style="line-height:1.6;">
                 ADB Process Industriels & Viticoles<br>
-                Concepteur, maintenance et intégrateur de solutions industrielles et viticoles.<br>
-                Spécialiste convoyeurs, chargement de pressoirs automatiques et maintenance technique.
+                Solutions industrielles et viticoles sur mesure.
             </p>
         </div>
 
         <div>
             <h3 style="color:#fff;">Navigation</h3>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="industrie.html">Industrie</a></li>
-                <li><a href="viticole.html">Viticole</a></li>
-                <li><a href="maintenance.html">Maintenance</a></li>
-                <li><a href="contact.html">Contact</a></li>
+            <ul style="list-style:none; padding:0; line-height:1.8;">
+                <li><a href="index.html" style="color:#ccc;">Accueil</a></li>
+                <li><a href="industrie.html" style="color:#ccc;">Industrie</a></li>
+                <li><a href="viticole.html" style="color:#ccc;">Viticole</a></li>
+                <li><a href="maintenance.html" style="color:#ccc;">Maintenance</a></li>
+                <li><a href="contact.html" style="color:#ccc;">Contact</a></li>
             </ul>
         </div>
 
         <div>
             <h3 style="color:#fff;">Liens utiles</h3>
-            <ul>
-                <li><a href="mentions-legales.html">Mentions légales</a></li>
-                <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
-                <li><a href="conditions-utilisation.html">Conditions d’utilisation</a></li>
+            <ul style="list-style:none; padding:0; line-height:1.8;">
+                <li><a href="mentions-legales.html" style="color:#ccc;">Mentions légales</a></li>
+                <li><a href="politique-confidentialite.html" style="color:#ccc;">Politique de confidentialité</a></li>
+                <li><a href="conditions-utilisation.html" style="color:#ccc;">Conditions d’utilisation</a></li>
             </ul>
         </div>
 
     </div>
 
-    <div class="footer-bottom">
+    <div style="text-align:center; margin-top:3rem; padding-top:2rem; border-top:1px solid #333;">
         © 2026 ADB Process Industriels & Viticoles — Tous droits réservés.
     </div>
 </footer>
