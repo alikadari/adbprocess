@@ -3,119 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Études & Projets Viticoles | ADB Process</title>
-
-    <style>
-        body { margin:0; font-family:Arial, sans-serif; background:#fff; color:#333; }
-
-        header {
-            background:#fff;
-            padding:1rem 5%;
-            position:fixed;
-            width:100%;
-            top:0;
-            z-index:1000;
-            box-shadow:0 2px 10px rgba(0,0,0,0.1);
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-        }
-
-        header img { height:120px; }
-
-        nav ul { display:flex; gap:2rem; list-style:none; }
-        nav a { text-decoration:none; color:#333; font-weight:600; }
-
-        .hero {
-            height:50vh;
-            background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                       url('solution_vitivini.png') center/cover;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            color:white;
-            margin-top:160px;
-        }
-
-        section { padding:4rem 10%; }
-        h1 { font-size:3rem; margin-bottom:1rem; }
-        h2 { font-size:2rem; margin-top:2rem; color:#0056b3; }
-        p { line-height:1.7; }
-    </style>
+    <title>Projets Viticoles | ADB Process</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- HEADER FIXE ALIGNÉ -->
-<header style="
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 3000;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-">
-
-    <div style="
-        max-width: 1400px;
-        margin: auto;
-        padding: 10px 40px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    ">
-
-        <!-- LOGO -->
-        <img src="logo.png" alt="ADB Process" style="height:120px;">
-
-        <!-- MENU -->
-        <nav>
-            <ul style="
-                list-style:none;
-                margin:0;
-                padding:0;
-                display:flex;
-                gap:2.5rem;
-            ">
-                <li><a href="index.html" style="color:#000; font-size:1.2rem; font-weight:600; text-decoration:none;">Accueil</a></li>
-                <li><a href="industrie.html" style="color:#000; font-size:1.2rem; font-weight:600; text-decoration:none;">Industrie</a></li>
-                <li><a href="viticole.html" style="color:#000; font-size:1.2rem; font-weight:600; text-decoration:none;">Viticole</a></li>
-                <li><a href="maintenance.html" style="color:#000; font-size:1.2rem; font-weight:600; text-decoration:none;">Maintenance</a></li>
-                <li><a href="contact.html" style="color:#000; font-size:1.2rem; font-weight:600; text-decoration:none;">Contact</a></li>
-            </ul>
-        </nav>
-
-    </div>
-
+<header>
+    <img src="logo.png" alt="ADB Process">
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="industrie.html">Industrie</a></li>
+            <li><a href="viticole.html">Viticole</a></li>
+            <li><a href="maintenance.html">Maintenance</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
-<!-- ESPACE POUR NE PAS CACHER LE CONTENU -->
-<div style="height:160px;"></div>
-
-<div class="hero">
-    <h1>Études & Projets Viticoles</h1>
-</div>
+<section class="hero" style="background-image:url('industriviti2.png');">
+    <div>
+        <h1>Études & Projets Viticoles</h1>
+        <p>Conception, optimisation et fabrication de solutions techniques pour le secteur viticole.</p>
+    </div>
+</section>
 
 <section>
-    <h2>Convoyeurs Viticoles</h2>
-    <p>
-        Conception, installation et optimisation de convoyeurs pour caisses de raisin,
-        bouteilles, cartons et palettes.
-    </p>
+    <h2 class="section-title">Nos Projets Sur Mesure</h2>
 
-    <h2>Chargement Automatique de Pressoirs</h2>
-    <p>
-        ADB Process est l’un des rares spécialistes en Champagne à maîtriser le chargement automatique de pressoirs.
-    </p>
+    <div class="grid">
 
-    <h2>Maintenance & Modernisation</h2>
-    <p>
-        Remueurs, pressoirs, pompes, lignes d’embouteillage : nous assurons la maintenance complète
-        et l’amélioration des installations viticoles.
-    </p>
+        <div class="card">
+            <h3>Études techniques</h3>
+            <p>Analyse complète de vos besoins, contraintes et flux viticoles.</p>
+        </div>
+
+        <div class="card">
+            <h3>Convoyeurs sur mesure</h3>
+            <p>Conception et fabrication de convoyeurs adaptés à vos installations.</p>
+        </div>
+
+        <div class="card">
+            <h3>Chargement de pressoirs</h3>
+            <p>Expertise unique en Champagne pour l’automatisation du chargement.</p>
+        </div>
+
+        <div class="card">
+            <h3>Optimisation de lignes</h3>
+            <p>Amélioration des cadences, réduction des pannes et optimisation des flux.</p>
+        </div>
+
+    </div>
 </section>
+
+<footer>
+    <img src="logot.png" alt="ADB Process">
+    <p>© 2026 ADB Process Industriels & Viticoles — Tous droits réservés.</p>
+</footer>
 
 </body>
 </html>
