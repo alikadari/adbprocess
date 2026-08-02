@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADB Process Industriels & Viticoles | Optimisation & Performance Industrielles et Viticoles </title>
-    <meta name="description" content="ADB Process Industriels & Viticoles - Experts en optimisation de processus industriels et performance globale.">
-    
-    <!-- Intégration de polices modernes (Google Fonts) -->
+    <title>ADB Process Industriels & Viticoles | Optimisation & Performance</title>
+    <meta name="description" content="ADB Process Industriels & Viticoles - Experts en optimisation de processus industriels et viticoles.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
     <style>
-        /* --- VARIABLES DE DESIGN --- */
         :root {
-            --primary-color: #0056b3; /* Bleu Industriel */
-            --secondary-color: #f4f7f6; /* Gris très clair */
-            --accent-color: #ffc107; /* Jaune/Orange pour les boutons (action) */
+            --primary-color: #0056b3;
+            --secondary-color: #f4f7f6;
+            --accent-color: #ffc107;
             --text-dark: #333;
             --text-light: #666;
             --white: #ffffff;
@@ -24,21 +22,11 @@
             --font-title: 'Poppins', sans-serif;
         }
 
-        /* --- STYLES DE BASE --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: var(--font-main);
-            color: var(--text-dark);
-            line-height: 1.6;
-            background-color: var(--white);
-        }
-        h1, h2, h3 { font-family: var(--font-title); font-weight: 700; color: var(--primary-color); }
-        a { text-decoration: none; transition: 0.3s; }
-        ul { list-style: none; }
+        body { font-family: var(--font-main); background: var(--white); color: var(--text-dark); }
 
-        /* --- EN-TÊTE (Navigation) --- */
         header {
-            background-color: var(--white);
+            background: var(--white);
             padding: 1rem 5%;
             position: fixed;
             width: 100%;
@@ -49,29 +37,29 @@
             justify-content: space-between;
             align-items: center;
         }
-        .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary-color); }
-        .logo span { color: var(--text-dark); }
-        
-        nav ul { display: flex; gap: 2rem; }
-        nav a { color: var(--text-dark); font-weight: 400; }
+
+        .logo img { height: 70px; }
+
+        nav ul { display: flex; gap: 2rem; list-style: none; }
+        nav a { color: var(--text-dark); font-weight: 500; }
         nav a:hover { color: var(--primary-color); }
 
-        /* --- SECTION HÉRO (Accueil) --- */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070') no-repeat center/cover;
             color: var(--white);
             padding: 0 10%;
             margin-top: 60px;
         }
-        .hero-content h1 { font-size: 3.5rem; color: var(--white); margin-bottom: 1rem; }
-        .hero-content p { font-size: 1.3rem; font-weight: 300; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;}
-        
+
+        .hero h1 { font-size: 3.5rem; }
+        .hero p { font-size: 1.3rem; margin: 1rem auto 2rem; max-width: 800px; }
+
         .btn {
             padding: 12px 30px;
             border-radius: 50px;
@@ -79,20 +67,19 @@
             cursor: pointer;
             display: inline-block;
         }
-        .btn-primary { background-color: var(--accent-color); color: #333; }
-        .btn-primary:hover { background-color: #e0a800; transform: translateY(-3px); }
+        .btn-primary { background: var(--accent-color); color: #333; }
+        .btn-primary:hover { background: #e0a800; }
 
-        /* --- SECTIONS GÉNÉRIQUES --- */
         section { padding: 5rem 10%; }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 1px; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
 
-        /* --- SECTION SERVICES --- */
-        .services { background-color: var(--secondary-color); }
+        .services { background: var(--secondary-color); }
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
+
         .service-item {
             background: var(--white);
             padding: 2.5rem;
@@ -100,142 +87,129 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: 0.3s;
-            border-bottom: 4px solid transparent;
         }
-        .service-item:hover { transform: translateY(-10px); border-color: var(--primary-color); }
-        
-        .service-icon { font-size: 3rem; margin-bottom: 1.5rem; display: block; }
-        
-        .service-item h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-dark); }
-        .service-item p { color: var(--text-light); font-size: 0.95rem; }
+        .service-item:hover { transform: translateY(-10px); }
 
-        /* --- SECTION À PROPOS --- */
+        .service-icon { font-size: 3rem; margin-bottom: 1.5rem; }
+
         .about-container {
             display: flex;
-            align-items: center;
             gap: 4rem;
-        }
-        .about-text { flex: 1; }
-        .about-image { flex: 1; text-align: center; }
-        .about-image img { 
-            max-width: 100%; 
-            border-radius: 15px; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
-            background-color: #ddd; height: 300px; width: 100%; object-fit: cover;
+            align-items: center;
         }
 
-        /* --- SECTION CONTACT --- */
-        .contact { text-align: center; background-color: var(--primary-color); color: var(--white); }
-        .contact .section-title { color: var(--white); }
-        .contact p { margin-bottom: 2rem; font-size: 1.1rem; }
-        .btn-contact { background-color: var(--white); color: var(--primary-color); }
-        .btn-contact:hover { background-color: var(--accent-color); color: #333; }
+        .about-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
 
-        /* --- PIED DE PAGE --- */
-        footer {
-            background-color: #222;
-            color: #bbb;
-            padding: 3rem 10% 1rem 10%;
+        .contact {
+            background: var(--primary-color);
+            color: var(--white);
             text-align: center;
         }
-        .footer-content { margin-bottom: 2rem; font-size: 0.9rem; }
-        .copyright { font-size: 0.8rem; border-top: 1px solid #444; padding-top: 1rem; }
 
-        /* --- RESPONSIVE --- */
+        .btn-contact { background: var(--white); color: var(--primary-color); }
+        .btn-contact:hover { background: var(--accent-color); color: #333; }
+
+        footer {
+            background: #222;
+            color: #bbb;
+            text-align: center;
+            padding: 3rem 10% 1rem;
+        }
+
+        footer .logo img { height: 70px; margin-bottom: 1rem; }
+
         @media (max-width: 768px) {
-            header { padding: 1rem; flex-direction: column; gap: 1rem; }
-            nav ul { gap: 1rem; font-size: 0.9rem; }
-            .hero-content h1 { font-size: 2.2rem; }
-            .hero-content p { font-size: 1rem; }
-            .section-title { font-size: 2rem; }
-            .about-container { flex-direction: column-reverse; gap: 2rem; }
-            section { padding: 3rem 5%; }
+            header { flex-direction: column; gap: 1rem; }
+            .about-container { flex-direction: column-reverse; }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- 1. EN-TÊTE -->
-    <header>
-        <div class="logo">ADB<span>Process Industriels & Viticoles</span></div>
-        <nav>
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#propos">À Propos</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <div class="logo">
+        <img src="https://raw.githubusercontent.com/alikadari/adbprocess/main/logo.png" alt="ADB Process Industriels & Viticoles">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#propos">À Propos</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- 2. SECTION HÉRO -->
-    <section id="accueil" class="hero">
-        <div class="hero-content">
-            <h1>Optimisation Industrielle & Viticole</h1>
-            <p>Experts en analyse de données, performance des processus et optimisation des installations industrielles et viticoles.</p>
-            <a href="#contact" class="btn btn-primary">Demander un Audit</a>
+<section id="accueil" class="hero">
+    <div>
+        <h1>Optimisation Industrielle & Viticole</h1>
+        <p>Experts en performance des processus, analyse de données et optimisation des installations industrielles et viticoles.</p>
+        <a href="#contact" class="btn btn-primary">Demander un Audit</a>
+    </div>
+</section>
+
+<section id="services" class="services">
+    <h2 class="section-title">Nos Compétences</h2>
+    <div class="services-grid">
+
+        <div class="service-item">
+            <span class="service-icon">📊</span>
+            <h3>Analyse de Données</h3>
+            <p>Analyse avancée pour identifier les goulots d’étranglement et optimiser vos performances.</p>
         </div>
-    </section>
 
-    <!-- 3. SERVICES -->
-    <section id="services" class="services">
-        <h2 class="section-title">Nos Compétences</h2>
-        <div class="services-grid">
-            
-            <div class="service-item">
-                <span class="service-icon">📊</span>
-                <h3>Analyse de Données</h3>
-                <p>Exploration approfondie de vos données de production pour identifier les goulots d'étranglement et les opportunités d'amélioration.</p>
-            </div>
-
-            <div class="service-item">
-                <span class="service-icon">⚙️</span>
-                <h3>Optimisation de Process</h3>
-                <p>Modélisation et simulation de vos lignes de production pour maximiser le rendement et réduire les pertes.</p>
-            </div>
-
-            <div class="service-item">
-                <span class="service-icon">🚀</span>
-                <h3>Performance Globale</h3>
-                <p>Accompagnement stratégique vers l'industrie 4.0 et mise en place d'indicateurs de performance (KPI) pertinents.</p>
-            </div>
-
+        <div class="service-item">
+            <span class="service-icon">⚙️</span>
+            <h3>Optimisation de Process</h3>
+            <p>Modélisation, simulation et amélioration continue de vos lignes de production.</p>
         </div>
-    </section>
 
-    <!-- 4. À PROPOS -->
-    <section id="propos" class="about">
-        <h2 class="section-title">Qui sommes-nous ?</h2>
-        <div class="about-container">
-            <div class="about-text">
-                <h3>Votre partenaire performance</h3>
-                <p>ADB Process Industriels & Viticoles accompagne les professionnels du secteur viticole et industriel en maintenance, dépannage, SAV, pièces détachées et amélioration d'équipements. Fort de plus de 20 ans d'expérience en conception et fabrication de machines, nous vous apportons des solutions rapides, fiables et adaptées à vos besoins..</p>
-                <p style="margin-top: 1rem;">Notre mission : rendre votre outil de production plus agile, plus économe et plus performant.</p>
-            </div>
-            <div class="about-image">
-                <img src="https://lachampagneviticole.fr/wp-content/uploads/2022/10/paysage-chemins-vigne.jpg" alt="Ingénieur analysant des données industrielles">
-            </div>
+        <div class="service-item">
+            <span class="service-icon">🍇</span>
+            <h3>Process Viticoles</h3>
+            <p>Solutions techniques pour les installations viticoles : qualité, rendement, automatisation.</p>
         </div>
-    </section>
 
-    <!-- 5. CONTACT -->
-    <section id="contact" class="contact">
-        <h2 class="section-title">Prêt à optimiser ?</h2>
-        <p>Contactez-nous pour discuter de vos défis industriels et viticoles et obtenir une première analyse personnalisée.</p>
-        <a href="mailto:contact@adbprocess.fr" class="btn btn-contact">Envoyer un E-mail</a>
-    </section>
+    </div>
+</section>
 
-    <!-- 6. PIED DE PAGE -->
-    <footer>
-        <div class="footer-content">
-            <div class="logo" style="color: var(--white); margin-bottom: 1rem;">ADB<span>Process Industriels & Viticoles</span></div>
-            <p>7 rue du Clair Marais, 51200 Epernay</p>
-            <p>Email: contact@adbprocess.fr | Tél: +33 6 08 61 28 28</p>
+<section id="propos" class="about">
+    <h2 class="section-title">Qui sommes-nous ?</h2>
+    <div class="about-container">
+        <div>
+            <h3>Votre partenaire performance</h3>
+            <p>ADB Process Industriels & Viticoles accompagne les entreprises dans l’amélioration de leurs performances, l’optimisation de leurs procédés et la modernisation de leurs installations.</p>
+            <p style="margin-top: 1rem;">Notre mission : rendre votre outil de production plus agile, plus économe et plus performant.</p>
         </div>
-        <div class="copyright">
-            &copy; 2026 ADB Process Industriels & Viticoles. Tous droits réservés.
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600" alt="Ingénieur analysant des données industrielles">
         </div>
-    </footer>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2 class="section-title">Prêt à optimiser ?</h2>
+    <p>Contactez-nous pour discuter de vos défis industriels et viticoles.</p>
+    <a href="mailto:contact@adbprocess.fr" class="btn btn-contact">Envoyer un E-mail</a>
+</section>
+
+<footer>
+    <div class="logo">
+        <img src="https://raw.githubusercontent.com/alikadari/adbprocess/main/logo.png" alt="ADB Process Industriels & Viticoles">
+    </div>
+    <p>123 Rue de l'Industrie, 75000 Paris</p>
+    <p>Email : contact@adbprocess.fr | Tél : +33 1 23 45 67 89</p>
+    <div class="copyright">
+        © 2024 ADB Process Industriels & Viticoles — Tous droits réservés.
+    </div>
+</footer>
 
 </body>
 </html>
