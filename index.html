@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADB Process Industriels & Viticoles | Optimisation & Performance</title>
-    <meta name="description" content="ADB Process Industriels & Viticoles accompagne les professionnels de l'industrie et du secteur viticole en maintenance, convoyeurs, automatisation et projets sur mesure.">
 
     <style>
         :root {
             --primary-color: #0056b3;
-            --secondary-color: #f4f7f6;
-            --accent-color: #ffc107;
+            --accent-color: #c8102e;
             --text-dark: #333;
-            --text-light: #666;
             --white: #ffffff;
             --font-main: 'Roboto', sans-serif;
             --font-title: 'Poppins', sans-serif;
@@ -41,38 +38,54 @@
         nav a { color: var(--text-dark); font-weight: 500; text-decoration: none; }
         nav a:hover { color: var(--primary-color); }
 
-        /* HERO */
+        /* HERO SANS FILTRE BLEU */
         .hero {
             height: 100vh;
+            background: url('industriviti.png') no-repeat center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0,0,0,0.7)),
-                        url('industriviti.png') no-repeat center/cover;
-            color: var(--white);
             padding: 0 10%;
             margin-top: 60px;
+            color: white;
+            position: relative;
         }
 
-        .hero h1 { font-size: 3.5rem; }
-        .hero p { font-size: 1.3rem; margin: 1rem auto 2rem; max-width: 800px; }
+        /* léger dégradé pour lisibilité du texte */
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+        }
 
-        .btn {
-            padding: 12px 30px;
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; }
+
+        .btn-primary {
+            background: var(--accent-color);
+            padding: 14px 35px;
             border-radius: 50px;
+            color: white;
             font-weight: 600;
-            cursor: pointer;
+            text-decoration: none;
             display: inline-block;
         }
-        .btn-primary { background: var(--accent-color); color: #333; }
-        .btn-primary:hover { background: #e0a800; }
 
-        /* SECTIONS */
+        .btn-primary:hover { background: #a61222; }
+
+        /* SECTION TITLES */
         section { padding: 5rem 10%; }
         .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
 
-        /* COMPÉTENCES MODERNISÉES */
+        /* COMPÉTENCES (comme le 345) */
         .competences-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -85,19 +98,6 @@
             overflow: hidden;
             cursor: pointer;
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            opacity: 0;
-            transform: translateY(40px) scale(0.95);
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        .competence-card:nth-child(2) { animation-delay: 0.2s; }
-        .competence-card:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
         }
 
         .competence-card img {
@@ -123,7 +123,7 @@
         .competence-btn {
             margin-top: 1rem;
             padding: 10px 25px;
-            background: #c8102e;
+            background: var(--accent-color);
             color: #fff;
             font-weight: 600;
             border-radius: 50px;
@@ -153,8 +153,16 @@
             text-align: center;
         }
 
-        .btn-contact { background: var(--white); color: var(--primary-color); }
-        .btn-contact:hover { background: var(--accent-color); color: #333; }
+        .btn-contact {
+            background: var(--white);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .btn-contact:hover { background: var(--accent-color); color: #fff; }
 
         /* FOOTER */
         footer {
@@ -192,16 +200,17 @@
 </header>
 
 
-<section id="accueil" class="hero">
-    <div>
+<!-- ⭐ HERO AVEC IMAGE ORIGINALE SANS FILTRE BLEU -->
+<section class="hero">
+    <div class="hero-content">
         <h1>Optimisation Industrielle & Viticole</h1>
         <p>Experts en performance des processus, convoyeurs, maintenance, remueurs, chargement de pressoirs et projets sur mesure.</p>
-        <a href="contact.html" class="btn btn-primary">Demander un Conseil</a>
+        <a href="contact.html" class="btn-primary">Demander un Conseil</a>
     </div>
 </section>
 
 
-<!-- ⭐ SECTION COMPÉTENCES MODERNISÉE (option D + tes images) -->
+<!-- ⭐ COMPÉTENCES COMME LE 345 -->
 <section id="competences" style="background:#f4f7f6;">
     <h2 class="section-title">Nos Compétences</h2>
 
@@ -241,15 +250,14 @@
 </section>
 
 
+<!-- ⭐ ABOUT -->
 <section id="propos" class="about">
     <h2 class="section-title">Qui sommes-nous ?</h2>
     <div class="about-container">
         <div>
             <h3>Votre partenaire performance</h3>
             <p>ADB Process Industriels & Viticoles accompagne les professionnels du secteur viticole et industriel en maintenance,
-                dépannage, SAV, pièces détachées et amélioration d'équipements.
-                Fort de plus de 15 ans d'expérience en conception et fabrication de machines, 
-                nous vous apportons des solutions rapides, fiables et adaptées à vos besoins.</p>
+                dépannage, SAV, pièces détachées et amélioration d'équipements.</p>
             <p style="margin-top: 1rem;">Notre mission : rendre votre outil de production plus agile, plus économe et plus performant.</p>
         </div>
         <div class="about-image">
@@ -259,13 +267,15 @@
 </section>
 
 
+<!-- ⭐ CONTACT -->
 <section id="contact" class="contact">
     <h2 class="section-title">Prêt à optimiser ?</h2>
     <p>Contactez-nous pour discuter de vos besoins industriels et viticoles.</p>
-    <a href="contact.html" class="btn btn-contact">Accéder à la page Contact</a>
+    <a href="contact.html" class="btn-contact">Accéder à la page Contact</a>
 </section>
 
 
+<!-- ⭐ FOOTER -->
 <footer>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:3rem;">
 
