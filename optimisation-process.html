@@ -24,21 +24,36 @@
 
 <body>
 
-<!-- HEADER PREMIUM -->
-<header style="position: fixed; top: 0; width: 100%; z-index: 3000; display: flex; flex-direction: column; align-items: center; padding-top: 10px;">
-    <div style="z-index: 4000; margin-bottom: -40px;">
-        <img src="https://raw.githubusercontent.com/alikadari/adbprocess/main/logo.png" style="height:180px;">
+<!-- HEADER À DEUX ÉTAGES -->
+<header style="position: fixed; top: 0; width: 100%; z-index: 3000;">
+
+    <!-- ÉTAGE 1 : LOGO -->
+    <div style="background:white; padding:10px 0; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+        <img src="logo.png" alt="ADB Process" style="height:120px;">
     </div>
-    <nav style="background: rgba(0,0,0,0.45); backdrop-filter: blur(6px); width: 100%; padding: 15px 0; display: flex; justify-content: center;">
-        <ul style="display:flex; gap:3rem; list-style:none;">
-            <li><a href="index.html" style="color:white; font-weight:600;">Accueil</a></li>
-            <li><a href="industrie.html" style="color:white; font-weight:600;">Industrie</a></li>
-            <li><a href="viticole.html" style="color:white; font-weight:600;">Viticole</a></li>
-            <li><a href="maintenance.html" style="color:white; font-weight:600;">Maintenance</a></li>
-            <li><a href="contact.html" style="color:white; font-weight:600;">Contact</a></li>
+
+    <!-- ÉTAGE 2 : MENU -->
+    <nav style="
+        background: rgba(0,0,0,0.65);
+        backdrop-filter: blur(6px);
+        padding: 15px 0;
+        text-align:center;
+        box-shadow:0 2px 10px rgba(0,0,0,0.2);
+    ">
+        <ul style="list-style:none; margin:0; padding:0; display:flex; justify-content:center; gap:3rem;">
+            <li><a href="index.html" style="color:white; font-size:1.2rem; font-weight:600; text-decoration:none;">Accueil</a></li>
+            <li><a href="industrie.html" style="color:white; font-size:1.2rem; font-weight:600; text-decoration:none;">Industrie</a></li>
+            <li><a href="viticole.html" style="color:white; font-size:1.2rem; font-weight:600; text-decoration:none;">Viticole</a></li>
+            <li><a href="maintenance.html" style="color:white; font-size:1.2rem; font-weight:600; text-decoration:none;">Maintenance</a></li>
+            <li><a href="contact.html" style="color:white; font-size:1.2rem; font-weight:600; text-decoration:none;">Contact</a></li>
         </ul>
     </nav>
+
 </header>
+
+<!-- ESPACE POUR NE PAS CACHER LE CONTENU -->
+<div style="height:200px;"></div>
+
 
 <section class="hero">
     <h1>Optimisation de Process</h1>
