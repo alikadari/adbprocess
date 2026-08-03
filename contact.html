@@ -188,18 +188,22 @@
             <p><strong>Horaires :</strong><br>Lundi – Vendredi : 8h00 – 18h00</p>
         </div>
 
-       <!-- FORMULAIRE -->
-<div class="contact-card">
-    <h3>Formulaire de Contact</h3>
+        <!-- FORMULAIRE FORMSpree -->
+        <div class="contact-card">
+            <h3>Formulaire de Contact</h3>
 
-    <form action="sendmail.php" method="POST" autocomplete="off">
-    <input type="text" name="nom" placeholder="Votre nom" required autocomplete="name">
-    <input type="email" name="email" placeholder="Votre email" required autocomplete="email">
-    <input type="text" name="sujet" placeholder="Sujet" required autocomplete="off">
-    <textarea name="message" rows="6" placeholder="Votre message" required autocomplete="off"></textarea>
-    <button type="submit">Envoyer</button>
-</form>
-</div>
+            <form action="https://formspree.io/f/mzzbqjvd" method="POST">
+                <input type="text" name="Nom" placeholder="Votre nom" required>
+                <input type="email" name="Email" placeholder="Votre email" required>
+                <input type="text" name="Sujet" placeholder="Sujet" required>
+                <textarea name="Message" rows="6" placeholder="Votre message" required></textarea>
+
+                <!-- Redirection après envoi -->
+                <input type="hidden" name="_redirect" value="https://adbprocess.fr/merci.html">
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
 
     </div>
 </section>
