@@ -1,38 +1,250 @@
-<?php
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | ADB Process Industriels & Viticoles</title>
 
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    http_response_code(405);
-    exit("Méthode non autorisée.");
-}
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --accent-color: #c8102e;
+            --text-dark: #333;
+            --white: #ffffff;
+            --font-main: 'Roboto', sans-serif;
+        }
 
-function clean($value) {
-    return htmlspecialchars(trim($value));
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); background: var(--white); color: var(--text-dark); }
 
-$nom     = clean($_POST['nom']);
-$email   = clean($_POST['email']);
-$sujet   = clean($_POST['sujet']);
-$message = clean($_POST['message']);
+        /* HEADER */
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-$to = "contact@adbprocess.fr";
-$subject = "Message depuis le site ADB Process : " . $sujet;
+        .logo img { height: 120px; }
 
-$body = "
-Nom : $nom
-Email : $email
+        nav ul { display: flex; gap: 2rem; list-style: none; }
+        nav a { color: var(--text-dark); font-weight: 500; text-decoration: none; }
+        nav a:hover { color: var(--primary-color); }
 
-Message :
-$message
-";
+        /* HERO */
+        .hero {
+            height: 60vh;
+            background: url('industriviti.png') no-repeat center/cover;
+            margin-top: 60px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 10%;
+            color: white;
+        }
 
-$headers = "From: $email\r\n";
-$headers .= "Reply-To: $email\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+        }
 
-if (mail($to, $subject, $body, $headers)) {
-    echo "Votre message a été envoyé avec succès.";
-} else {
-    echo "Erreur : le serveur n'autorise pas l'envoi d'email.";
-}
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
 
-?>
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; }
+
+        /* SECTION */
+        section { padding: 5rem 10%; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+
+        /* CONTACT GRID */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-card {
+            background: #f4f7f6;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .contact-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .contact-card p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* FORMULAIRE */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input, textarea {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        button {
+            background: var(--accent-color);
+            color: white;
+            padding: 14px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #a61222;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #222;
+            color: #bbb;
+            text-align: center;
+            padding: 3rem 10% 1rem;
+        }
+
+        footer .logo img { height: 70px; margin-bottom: 1rem; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="ADB Process">
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="industrie.html">Industrie</a></li>
+            <li><a href="viticole.html">Viticole</a></li>
+            <li><a href="maintenance.html">Maintenance</a></li>
+            <li><a href="bureau-etudes.html">Bureau d'Études</a></li>
+            <li><a href="optimisation-process.html">Optimisation</a></li>
+            <li><a href="projets-viticoles.html">Projets Viticoles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Contactez-nous</h1>
+        <p>Besoin d’un devis, d’un renseignement ou d’un accompagnement technique ? Nous sommes à votre écoute.</p>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section>
+    <h2 class="section-title">Nos Coordonnées & Formulaire</h2>
+
+    <div class="contact-grid">
+
+        <!-- COORDONNÉES -->
+        <div class="contact-card">
+            <h3>ADB Process Industriels & Viticoles</h3>
+            <p>7 rue du Clair Marais<br>51200 Épernay<br>France</p>
+
+            <p><strong>Téléphone :</strong><br>+33 6 08 61 28 28</p>
+
+            <p><strong>Email :</strong><br>contact@adbprocess.fr</p>
+
+            <p><strong>Horaires :</strong><br>Lundi – Vendredi : 8h00 – 18h00</p>
+        </div>
+
+        <!-- FORMULAIRE -->
+        <div class="contact-card">
+            <h3>Formulaire de Contact</h3>
+
+            <form action="mailto:contact@adbprocess.fr" method="POST" enctype="text/plain">
+                <input type="text" name="Nom" placeholder="Votre nom" required>
+                <input type="email" name="Email" placeholder="Votre email" required>
+                <input type="text" name="Sujet" placeholder="Sujet" required>
+                <textarea name="Message" rows="6" placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:3rem;">
+
+        <div class="logo">
+            <img src="logo.png" alt="ADB Process">
+            <p style="line-height:1.6;">
+                ADB Process Industriels & Viticoles<br>
+                Solutions industrielles et viticoles sur mesure.
+            </p>
+        </div>
+
+        <div>
+            <h3 style="color:#fff;">Navigation</h3>
+            <ul style="list-style:none; padding:0; line-height:1.8;">
+                <li><a href="index.html" style="color:#ccc;">Accueil</a></li>
+                <li><a href="industrie.html" style="color:#ccc;">Industrie</a></li>
+                <li><a href="viticole.html" style="color:#ccc;">Viticole</a></li>
+                <li><a href="maintenance.html" style="color:#ccc;">Maintenance</a></li>
+                <li><a href="bureau-etudes.html" style="color:#ccc;">Bureau d'Études</a></li>
+                <li><a href="optimisation-process.html" style="color:#ccc;">Optimisation</a></li>
+                <li><a href="projets-viticoles.html" style="color:#ccc;">Projets Viticoles</a></li>
+                <li><a href="contact.html" style="color:#ccc;">Contact</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 style="color:#fff;">Liens utiles</h3>
+            <ul style="list-style:none; padding:0; line-height:1.8;">
+                <li><a href="mentions-legales.html" style="color:#ccc;">Mentions légales</a></li>
+                <li><a href="politique-confidentialite.html" style="color:#ccc;">Politique de confidentialité</a></li>
+                <li><a href="conditions-utilisation.html" style="color:#ccc;">Conditions d’utilisation</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:3rem; padding-top:2rem; border-top:1px solid #333;">
+        © 2026 ADB Process Industriels & Viticoles — Tous droits réservés.
+    </div>
+</footer>
+
+</body>
+</html>
