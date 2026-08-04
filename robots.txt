@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adbprocess.fr/sitemap.xml
+
+# Empêcher l’indexation des dossiers inutiles
+Disallow: /assets/
+Disallow: /images/
+Disallow: /temp/
+Disallow: /draft/
