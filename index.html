@@ -24,7 +24,6 @@
     <meta property="og:url" content="https://www.adbprocess.fr">
     <meta property="og:type" content="website">
 
-    <!-- regen -->
     <!-- TWITTER CARD -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ADB Process – Process Viticoles & Industriels">
@@ -86,7 +85,7 @@
         nav a { color: var(--text-dark); font-weight: 500; text-decoration: none; }
         nav a:hover { color: var(--primary-color); }
 
-        /* HERO SANS FILTRE BLEU */
+        /* HERO FIXÉ POUR TEXTE BLANC ET CLAIR */
         .hero {
             height: 100vh;
             background: url('industriviti.png') no-repeat center/cover;
@@ -100,33 +99,32 @@
             position: relative;
         }
 
+        /* Calque d'assombrissement en dessous du texte (z-index: 1) */
         .hero::after {
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 1;
         }
 
+        /* Conteneur de texte au-dessus du calque d'assombrissement (z-index: 2) */
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 900px;
         }
 
-        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.3rem; margin-bottom: 2rem; }
-
-        .btn-primary {
-            background: var(--accent-color);
-            padding: 14px 35px;
-            border-radius: 50px;
-            color: white;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
+        .hero h1 { 
+            font-size: 3.5rem; 
+            margin-bottom: 1rem; 
+            color: #ffffff;
         }
-
-        .btn-primary:hover { background: #a61222; }
+        
+        .hero p { 
+            font-size: 1.3rem; 
+            color: #ffffff;
+        }
 
         /* SECTION TITLES */
         section { padding: 5rem 10%; }
@@ -251,10 +249,9 @@
 </header>
 
 <section id="accueil" class="hero">
-    <div>
+    <div class="hero-content">
         <h1>Optimisation Industrielle & Viticole</h1>
-        <p>Experts en performance de chargement de pressoirs, convoyeurs, maintenance industrielles & viticoles et  projets sur mesure.</p>
-        <a href="contact.html" class="btn-contact">demander un conseil</a>
+        <p>Experts en performance de chargement de pressoirs, convoyeurs, maintenance industrielles & viticoles et projets sur mesure.</p>
     </div>
 </section>
 
