@@ -65,65 +65,67 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: var(--font-main); background: var(--white); color: var(--text-dark); }
 
-        /* HEADER */
+        /* HEADER CENTRÉ SUR L'IMAGE */
         header {
-            background: var(--white);
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
+            position: absolute;
             top: 0;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 30px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
-        .logo img { height: 120px; }
-
-        nav ul { display: flex; gap: 2rem; list-style: none; }
-        nav a { color: var(--text-dark); font-weight: 500; text-decoration: none; }
+        nav { margin-bottom: 10px; }
+        nav ul { display: flex; gap: 1.8rem; list-style: none; }
+        nav a { color: var(--text-dark); font-weight: 500; text-decoration: none; font-size: 0.95rem; }
         nav a:hover { color: var(--primary-color); }
 
-        /* HERO FIXÉ POUR TEXTE BLANC ET CLAIR */
+        .logo img { height: 110px; display: block; }
+
+        /* HERO SUR TOUTE LA HAUTEUR */
         .hero {
             height: 100vh;
+            width: 100%;
             background: url('industriviti.png') no-repeat center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 0 10%;
-            margin-top: 60px;
-            color: #ffffff;
             position: relative;
         }
 
-        /* Calque d'assombrissement en dessous du texte (z-index: 1) */
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.45);
-            z-index: 1;
-        }
-
-        /* Conteneur de texte au-dessus du calque d'assombrissement (z-index: 2) */
+        /* BANDEAU/BOÎTE CENTRALE ASSOMBRIE */
         .hero-content {
             position: relative;
             z-index: 2;
             max-width: 900px;
+            width: 90%;
+            padding: 40px 30px;
+            background: rgba(0, 0, 0, 0.55);
+            border-radius: 4px;
+            backdrop-filter: blur(2px);
         }
 
         .hero h1 { 
-            font-size: 3.5rem; 
-            margin-bottom: 1rem; 
+            font-size: 3.2rem; 
+            margin-bottom: 1.2rem; 
             color: #ffffff;
+            font-weight: 700;
+            line-height: 1.2;
         }
         
         .hero p { 
-            font-size: 1.3rem; 
+            font-size: 1.2rem; 
             color: #ffffff;
+            line-height: 1.5;
+            font-weight: 400;
         }
 
         /* SECTION TITLES */
@@ -136,8 +138,6 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-
-        .competence-link { text-decoration: none; color: inherit; }
 
         .competence-card {
             position: relative;
@@ -224,7 +224,10 @@
         footer .logo img { height: 70px; margin-bottom: 1rem; }
 
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 1rem; }
+            header { width: 95%; padding: 10px; }
+            nav ul { gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
             .about-container { flex-direction: column-reverse; }
         }
     </style>
@@ -233,10 +236,6 @@
 <body>
 
 <header>
-    <div class="logo">
-        <img src="logo.png" alt="ADB Process Industriels & Viticoles">
-    </div>
-
     <nav>
         <ul>
             <li><a href="index.html">Accueil</a></li>
@@ -246,6 +245,9 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+    <div class="logo">
+        <img src="logo.png" alt="ADB Process Industriels & Viticoles">
+    </div>
 </header>
 
 <section id="accueil" class="hero">
@@ -300,7 +302,6 @@
     <div class="about-container">
 
         <div>
-
             <h3>Votre partenaire performance</h3>
             <p>
                 ADB Process Industriels & Viticoles accompagne les professionnels du secteur viticole et industriel 
@@ -348,7 +349,6 @@
                 <li>Optimiser le flux de vendange et faciliter le travail humain dans le pressoir.</li>
                 <li>Développer des solutions sur mesure garantissant la durabilité de votre matériel.</li>
             </ul>
-
         </div>
 
         <div class="about-image">
@@ -373,7 +373,7 @@
             <img src="logo.png" alt="ADB Process Industriels & Viticoles">
             <p style="line-height:1.6;">
                 ADB Process Industriels & Viticoles<br>
-               Expertise unique en Champagne de l'optimisation et automatisation du chargement de pressoir., maintenance et intégrateur de solutions industrielles et viticoles.<br>
+                Expertise unique en Champagne de l'optimisation et automatisation du chargement de pressoir, maintenance et intégrateur de solutions industrielles et viticoles.<br>
                 Spécialiste convoyeurs et maintenance technique.
             </p>
         </div>
