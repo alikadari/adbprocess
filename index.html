@@ -65,7 +65,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: var(--font-main); background: var(--white); color: var(--text-dark); }
 
-        /* HEADER CENTRÉ SUR L'IMAGE */
+        /* HEADER CENTRÉ AVEC CADRES DE MENU */
         header {
             position: absolute;
             top: 0;
@@ -73,7 +73,7 @@
             transform: translateX(-50%);
             z-index: 1000;
             background: rgba(255, 255, 255, 0.95);
-            padding: 15px 30px;
+            padding: 15px 35px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -82,14 +82,34 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
-        nav { margin-bottom: 10px; }
-        nav ul { display: flex; gap: 1.8rem; list-style: none; }
-        nav a { color: var(--text-dark); font-weight: 500; text-decoration: none; font-size: 0.95rem; }
-        nav a:hover { color: var(--primary-color); }
+        nav { margin-bottom: 12px; }
+        nav ul { display: flex; gap: 0.5rem; list-style: none; }
+        
+        /* Boutons encadrés du menu */
+        nav a { 
+            color: #000; 
+            font-weight: 500; 
+            text-decoration: none; 
+            font-size: 0.9rem;
+            padding: 4px 12px;
+            border: 1px solid #000;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 2px;
+            transition: all 0.2s ease-in-out;
+        }
 
-        .logo img { height: 110px; display: block; }
+        nav a:hover { 
+            background: #000; 
+            color: #fff; 
+        }
 
-        /* HERO SUR TOUTE LA HAUTEUR */
+        /* LOGO AGRANDI */
+        .logo img { 
+            height: 160px; 
+            display: block; 
+        }
+
+        /* HERO SUR TOUTE LA HAUTEUR AVEC ASSOMBRESSIMENT LÉGER GLOBAL */
         .hero {
             height: 100vh;
             width: 100%;
@@ -101,31 +121,39 @@
             position: relative;
         }
 
-        /* BANDEAU/BOÎTE CENTRALE ASSOMBRIE */
+        /* Voile sombre léger appliqué à TOUTE l'image */
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.25);
+            z-index: 1;
+        }
+
+        /* TEXTE POSÉ DIRECTEMENT SUR L'IMAGE */
         .hero-content {
             position: relative;
             z-index: 2;
             max-width: 900px;
             width: 90%;
-            padding: 40px 30px;
-            background: rgba(0, 0, 0, 0.55);
-            border-radius: 4px;
-            backdrop-filter: blur(2px);
+            padding: 20px;
         }
 
         .hero h1 { 
-            font-size: 3.2rem; 
+            font-size: 3.5rem; 
             margin-bottom: 1.2rem; 
             color: #ffffff;
             font-weight: 700;
             line-height: 1.2;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
         }
         
         .hero p { 
-            font-size: 1.2rem; 
+            font-size: 1.25rem; 
             color: #ffffff;
             line-height: 1.5;
             font-weight: 400;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
         }
 
         /* SECTION TITLES */
@@ -225,7 +253,8 @@
 
         @media (max-width: 768px) {
             header { width: 95%; padding: 10px; }
-            nav ul { gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+            nav ul { gap: 0.3rem; flex-wrap: wrap; justify-content: center; }
+            .logo img { height: 110px; }
             .hero h1 { font-size: 2.2rem; }
             .hero p { font-size: 1rem; }
             .about-container { flex-direction: column-reverse; }
