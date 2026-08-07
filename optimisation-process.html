@@ -17,37 +17,61 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: var(--font-main); background: var(--white); color: var(--text-dark); }
 
-        /* HEADER */
+        /* HEADER CENTRÉ AVEC BOUTONS ENCADRÉS */
         header {
-            background: var(--white);
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
+            position: absolute;
             top: 0;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 35px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
-        .logo img { height: 120px; }
+        nav { margin-bottom: 12px; }
+        nav ul { display: flex; gap: 0.5rem; list-style: none; }
+        
+        /* Boutons encadrés du menu */
+        nav a { 
+            color: #000; 
+            font-weight: 500; 
+            text-decoration: none; 
+            font-size: 0.9rem;
+            padding: 4px 12px;
+            border: 1px solid #000;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 2px;
+            transition: all 0.2s ease-in-out;
+        }
 
-        nav ul { display: flex; gap: 2rem; list-style: none; }
-        nav a { color: var(--text-dark); font-weight: 500; text-decoration: none; }
-        nav a:hover { color: var(--primary-color); }
+        nav a:hover { 
+            background: #000; 
+            color: #fff; 
+        }
 
-        /* HERO */
+        /* LOGO AGRANDI & CENTRÉ */
+        .logo img { 
+            height: 160px; 
+            display: block; 
+        }
+
+        /* HERO SUR MESURE AVEC ASSOMBREMENT LÉGER */
         .hero {
-            height: 60vh;
+            height: 65vh;
+            width: 100%;
             background: url('industriviti.png') no-repeat center/cover;
-            margin-top: 60px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 0 10%;
+            padding: 220px 10% 0 10%; /* Espacement pour laisser la place au header centré */
             color: white;
         }
 
@@ -55,7 +79,8 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+            background: rgba(0, 0, 0, 0.35);
+            z-index: 1;
         }
 
         .hero-content {
@@ -64,8 +89,18 @@
             max-width: 800px;
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; }
+        .hero h1 { 
+            font-size: 3rem; 
+            margin-bottom: 1rem; 
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero p { 
+            font-size: 1.2rem; 
+            color: #ffffff;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+        }
 
         /* SECTION */
         section { padding: 5rem 10%; }
@@ -106,7 +141,12 @@
         footer .logo img { height: 70px; margin-bottom: 1rem; }
 
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 1rem; }
+            header { width: 95%; padding: 10px; }
+            nav ul { gap: 0.3rem; flex-wrap: wrap; justify-content: center; }
+            .logo img { height: 110px; }
+            .hero { height: auto; padding-top: 260px; padding-bottom: 50px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
         }
     </style>
 </head>
@@ -114,10 +154,6 @@
 <body>
 
 <header>
-    <div class="logo">
-        <img src="logo.png" alt="ADB Process">
-    </div>
-
     <nav>
         <ul>
             <li><a href="index.html">Accueil</a></li>
@@ -128,6 +164,9 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+    <div class="logo">
+        <img src="logo.png" alt="ADB Process">
+    </div>
 </header>
 
 <!-- HERO -->
@@ -219,3 +258,4 @@
 
 </body>
 </html>
+```[cite: 7]
